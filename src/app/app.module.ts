@@ -45,7 +45,7 @@ import { MovieMainPageComponent } from './moviesPage/movie-main-page/movie-main-
 import { MovieMainPageFirstimagesComponent } from './moviesPage/movieMainPage-components/movie-main-page-firstimages/movie-main-page-firstimages.component';
 import { CurrentMoviesComponent } from './moviesPage/movieMainPage-components/current-movies/current-movies.component';
 import { ConcertPageCardsComponent } from './eventsPage/concertPageComponents/concert-page-cards/concert-page-cards.component';
-
+import { SwiperModule } from 'swiper/types';
 
 registerLocaleData(en);
 register();
@@ -92,15 +92,14 @@ register();
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NzCarouselModule
+    NzCarouselModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     provideAnimationsAsync(),
-    provideHttpClient()
-    
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

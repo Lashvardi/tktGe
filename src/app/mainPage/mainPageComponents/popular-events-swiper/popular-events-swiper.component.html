@@ -3,12 +3,13 @@
         <p>პოპულარული ღონისძიებები</p>
     </div>
     <swiper-container
-    navigation="false"
-    slides-per-view="4"
-    loop="false">
+        #swiper
+        navigation="false"
+        [slidesPerView]="slidesPerView"
+        loop="false">
         <ng-container *ngFor="let tktTopEvent of tktTopEvents">
             <swiper-slide class="swiper_slide">
-                <a href="details/{{tktTopEvent.eventId}}">
+                <a [routerLink]="['/details', tktTopEvent.eventId]">
                     <div class="card">
                         <div class="image_card">
                             <div class="date_container">
@@ -17,17 +18,12 @@
                                     <span>ივლ</span>
                                 </div>
                             </div>
-                            <div class="price_container" *ngIf="tktTopEvent.isSoldOut === false">
+                            <div class="price_container" *ngIf="!tktTopEvent.isSoldOut">
                                 <div class="price">
                                     <p>{{tktTopEvent.minPrice}} ₾-დან</p>
                                 </div>
                             </div>
-                            <div class="soldOut_container" *ngIf="tktTopEvent.isSoldOut === true">
-                                <div class="soldOut">
-                                    <p>გაყიდულია</p>
-                                </div>
-                            </div>
-                            <div class="soldOut_container" *ngIf="tktTopEvent.isSoldOut === true">
+                            <div class="soldOut_container" *ngIf="tktTopEvent.isSoldOut">
                                 <div class="soldOut">
                                     <p>გაყიდულია</p>
                                 </div>
