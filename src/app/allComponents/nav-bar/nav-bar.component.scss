@@ -132,6 +132,7 @@ header{
                     }
                     .searchIcon{
                         color: white;
+                        z-index: 1000 !important;
                     }
                 }
                 .searchedEvents{

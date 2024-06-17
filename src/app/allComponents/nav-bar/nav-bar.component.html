@@ -9,7 +9,10 @@
             <div class="search_container" [class.searchContainerFilmsPage]="filmsPageActive">
                 <div class="search" >
                     <input  type="search" placeholder="ძებნა..." [(ngModel)]="eventSearch" name="eventSearch">
-                    <i class="fa-solid fa-magnifying-glass searchIcon" (click)="search()" style="cursor: pointer;"></i>
+                    <span (click)="search()">
+                    <i class="fa-solid fa-magnifying-glass searchIcon"  style="cursor: pointer;" ></i>
+
+                    </span>
                 </div>
                 <div class="searchedEvents">
                     <div class="searchedEvents_container">
